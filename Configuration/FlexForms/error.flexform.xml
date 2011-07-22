@@ -1,0 +1,48 @@
+<T3DataStructure>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:hype_error/Resources/Private/Language/locallang_db.xml:hype_error.flexform.general_settings</sheetTitle>
+					<cshFile>LLL:EXT:hype_error/Resources/Private/Language/locallang_csh-flexform_error.xml</cshFile>
+				</TCEforms>
+
+				<type>array</type>
+
+				<el>
+					<settings.view.error.page.sitemap>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:hype_error/Resources/Private/Language/locallang_db.xml:tx_hypeerror.flexform.sitemap</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<minitems>0</minitems>
+								<maxitems>1</maxitems>
+								<prepend_tname>0</prepend_tname>
+							</config>
+						</TCEforms>
+					</settings.view.error.page.sitemap>
+
+					<settings.view.error.page.search>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:hype_error/Resources/Private/Language/locallang_db.xml:tx_hypeerror.flexform.search</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<minitems>0</minitems>
+								<maxitems>1</maxitems>
+								<prepend_tname>0</prepend_tname>
+							</config>
+						</TCEforms>
+					</settings.view.error.page.search>
+				</el>
+			</ROOT>
+		</sDEF>
+	</sheets>
+</T3DataStructure>

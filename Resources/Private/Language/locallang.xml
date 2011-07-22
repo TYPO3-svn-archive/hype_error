@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for plugin &quot;tx_hypeerror&quot;</description>
+	</meta>
+
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="error_404">Error 404</label>
+			<label index="not_found">The page <strong>%s</strong> can't be found.</label>
+
+			<label index="page_unavailable">The requested page can't be served.</label>
+			<label index="possible_reasons">If the error persists, this may be caused by:</label>
+
+			<label index="error_mistake">The address of  the page has been mistyped.</label>
+			<label index="error_change">The address of the page has been changed.</label>
+			<label index="error_offline">The page has been taken offline.</label>
+		</languageKey>
+
+		<languageKey index="de" type="array">
+			<label index="error_404">Fehler 404</label>
+			<label index="not_found"><![CDATA[Die Seite <strong>%s</strong> kann nicht gefunden werden.]]></label>
+
+			<label index="page_unavailable">Die angeforderte Seite kann leider nicht zur Verfügung gestellt werden.</label>
+			<label index="possible_reasons">Falls der Fehler weiterhin besteht, kann dies folgende Ursachen haben:</label>
+
+			<label index="error_mistake">Die Adresse der Seite enthält einen (Tipp-) Fehler.</label>
+			<label index="error_change">Die Adresse der Seite hat sich geändert.</label>
+			<label index="error_offline">Die Seite steht nicht mehr zur Verfügung.</label>
+		</languageKey>
+	</data>
+</T3locallang>

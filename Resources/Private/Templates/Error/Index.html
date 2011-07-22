@@ -1,0 +1,21 @@
+<f:layout name="Error" />
+
+<f:section name="content">
+	<p>
+		<f:translate key="not_found" arguments="{0: requestedAddress}" htmlEscape="false"/>
+	</p>
+
+	<p>
+		<f:translate key="page_unavailable" />
+	</p>
+
+	<p>
+		<strong><f:translate key="possible_reasons"/></strong>
+	</p>
+
+	<ul class="reasons">
+		<li><f:translate key="error_mistake"/></li>
+		<li><f:translate key="error_change"/></li>
+		<li><f:translate key="error_offline"/></li>
+	</ul>
+</f:section>

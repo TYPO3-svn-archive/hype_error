@@ -1,0 +1,23 @@
+# cat=basic/links/001; type=boolean; label = Log errors: Enable logging of 404 errors.
+logErrors = 1
+
+# cat=basic/links/002; type=options[INFO=0,NOTICE=1,WARNING=2,ERROR=3,FATAL=4]; label = Severity level: The level for which 404 errors are being logged.
+severityLevel = 3
+
+# cat=basic/links/003; type=boolean; label = Log with referrer only: Only log 404 errors for requests containing a referrer.
+logWithReferrerOnly = 0
+
+# cat=basic/links/004; type=boolean; label = Use domain page: Use the domain page to store 404 errors, if available.
+useDomainPid = 1
+
+# cat=basic/links/005; type=boolean; label = Override header: Override 50x system errors with a 404 status response header.
+overrideHeader = 0
+
+# cat=basic/links/006; type=boolean; label = Send notification: Send e-mail notifications on 404 errors.
+sendNotification = 0
+
+# cat=basic/links/007; type=int+; label = Notification threshold: After this amount of 404 errors on the same URL, notifications will be sent.
+notificationThreshold = 10
+
+# cat=basic/links/008; type=int+; label = Notification interval: Interval after a new notification for 404 errors on the same URL will be sent.
+notificationInterval = 5

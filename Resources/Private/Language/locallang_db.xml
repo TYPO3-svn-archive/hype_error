@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'hype_error'</description>
+	</meta>
+
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_hypeerror">Hype error</label>
+
+			<label index="tx_hypeerror.plugin.error">Error 404</label>
+
+			<label index="tx_hypeerror.flexform.general_settings">General settings</label>
+			<label index="tx_hypeerror.flexform.sitemap">Sitemap</label>
+			<label index="tx_hypeerror.flexform.search">Search</label>
+
+			<label index="tx_hypeerror.palette.client">Client data</label>
+
+			<label index="tx_hypeerror_errorlog">404 Error</label>
+			<label index="tx_hypeerror_errorlog.domain">Domain</label>
+			<label index="tx_hypeerror_errorlog.url">URL</label>
+			<label index="tx_hypeerror_errorlog.path">Path</label>
+			<label index="tx_hypeerror_errorlog.host">Host</label>
+			<label index="tx_hypeerror_errorlog.referrer">Referrer</label>
+			<label index="tx_hypeerror_errorlog.user_agent">User Agent</label>
+			<label index="tx_hypeerror_errorlog.ip_address">IP Address</label>
+			<label index="tx_hypeerror_errorlog.reason">Reason</label>
+			<label index="tx_hypeerror_errorlog.count">Count</label>
+
+			<label index="sys_domain.tx_hypeerror_error_page">Error page</label>
+		</languageKey>
+
+		<languageKey index="de" type="array">
+			<label index="tx_hypeerror">Hype Error</label>
+
+			<label index="tx_hypeerror.plugin.error">Fehler 404</label>
+
+			<label index="tx_hypeerror.flexform.general_settings">Allgemeine Einstellungen</label>
+			<label index="tx_hypeerror.flexform.sitemap">Sitemap</label>
+			<label index="tx_hypeerror.flexform.search">Suche</label>
+
+			<label index="tx_hypeerror.palette.client">Client-Daten</label>
+
+			<label index="tx_hypeerror_errorlog">404 Fehler</label>
+			<label index="tx_hypeerror_errorlog.domain">Domain</label>
+			<label index="tx_hypeerror_errorlog.url">URL</label>
+			<label index="tx_hypeerror_errorlog.path">Pfad</label>
+			<label index="tx_hypeerror_errorlog.host">Host</label>
+			<label index="tx_hypeerror_errorlog.referrer">Referrer</label>
+			<label index="tx_hypeerror_errorlog.user_agent">User-Agent</label>
+			<label index="tx_hypeerror_errorlog.ip_address">IP Adresse</label>
+			<label index="tx_hypeerror_errorlog.reason">Grund</label>
+			<label index="tx_hypeerror_errorlog.count">Anzahl</label>
+
+			<label index="sys_domain.tx_hypeerror_error_page">Fehlerseite</label>
+		</languageKey>
+	</data>
+</T3locallang>
