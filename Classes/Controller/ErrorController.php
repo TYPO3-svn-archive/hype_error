@@ -48,17 +48,17 @@ class Tx_HypeError_Controller_ErrorController extends Tx_Extbase_MVC_Controller_
 	public function indexAction() {
 
 		# Send 404 header if called directly
-		if($_SERVER['HTTP_X_REQUESTED_WITH'] != 'TYPO3') {
+		if(!preg_match('~^TYPO3~', $_SERVER['HTTP_X_REQUESTED_WITH'])) {
 			header($GLOBALS['TYPO3_CONF_VARS']['FE']['pageNotFound_handling_statheader']);
 		}
 
 		# Determine the requested address
-		$requestedAddress = ($referrer = t3lib_div::getIndpEnv('HTTP_REFERER'))
+		$address = ($referrer = $_SERVER['HTTP_X_REQUESTED_FROM'])
 			? $referrer
 			: t3lib_div::getIndpEnv('REQUEST_URI');
 
 		# Set requested address
-		$this->view->assign('requestedAddress', $requestedAddress);
+		$this->view->assign('requestedAddress', $address);
 	}
 }
 ?>

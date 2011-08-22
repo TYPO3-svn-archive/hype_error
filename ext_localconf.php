@@ -11,17 +11,35 @@ if(!defined('TYPO3_MODE'))
 Tx_Extbase_Utility_Extension::configurePlugin(
 	$_EXTKEY,
 	'Error',
+	array('Error' => 'index'),
 	array('Error' => 'index')
 );
 
 
 
-# ERROR HANDLING
+# HOOKS
 
-# 40x
-$GLOBALS['TYPO3_CONF_VARS']['FE']['pageNotFound_handling'] = 'USER_FUNCTION:EXT:' . $_EXTKEY . '/Classes/Hook/ErrorHook.php:user_HypeError_Hook_ErrorHook->process';
+# Frontend
+if(TYPO3_MODE == 'FE') {
 
-# 50x
-$GLOBALS['TYPO3_CONF_VARS']['FE']['pageUnavailable_handling'] = 'USER_FUNCTION:EXT:' . $_EXTKEY . '/Classes/Hook/ErrorHook.php:user_HypeError_Hook_ErrorHook->process';
+	# Error 40x
+	$GLOBALS['TYPO3_CONF_VARS']['FE']['pageNotFound_handling'] = 'USER_FUNCTION:EXT:' . $_EXTKEY . '/Classes/Hook/ErrorHook.php:user_HypeError_Hook_ErrorHook->process';
+
+	# Error 50x
+	$GLOBALS['TYPO3_CONF_VARS']['FE']['pageUnavailable_handling'] = 'USER_FUNCTION:EXT:' . $_EXTKEY . '/Classes/Hook/ErrorHook.php:user_HypeError_Hook_ErrorHook->process';
+}
+
+
+
+# XCLASS
+
+# Frontend
+if(TYPO3_MODE == 'FE') {
+
+	# RealURL
+	if(t3lib_extMgm::isLoaded('realurl')) {
+		$GLOBALS['TYPO3_CONF_VARS']['FE']['XCLASS']['ext/realurl/class.tx_realurl.php'] = t3lib_extMgm::extPath('hype_error', 'Classes/XClass/class.ux_tx_realurl.php');
+	}
+}
 
 ?>

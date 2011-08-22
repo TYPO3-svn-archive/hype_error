@@ -8,12 +8,12 @@
 	<data type="array">
 		<languageKey index="default" type="array">
 			<label index="error_404">Error 404</label>
-			<label index="not_found">The page <strong>%s</strong> can't be found.</label>
+			<label index="not_found"><![CDATA[The page <strong>%s</strong> can't be found.]]></label>
 
 			<label index="page_unavailable">The requested page can't be served.</label>
 			<label index="possible_reasons">If the error persists, this may be caused by:</label>
 
-			<label index="error_mistake">The address of  the page has been mistyped.</label>
+			<label index="error_mistake">The address of the page has been mistyped.</label>
 			<label index="error_change">The address of the page has been changed.</label>
 			<label index="error_offline">The page has been taken offline.</label>
 		</languageKey>

@@ -8,7 +8,7 @@ if(!defined('TYPO3_MODE'))
 $TCA['tx_hypeerror_errorlog'] = array(
 	'ctrl' => $TCA['tx_hypeerror_errorlog']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'domain, url, path, host, referrer, user_agent, ip_address, reason, fe_group, editlock'
+		'showRecordFieldList' => 'domain, url, path, address, host, referrer, user_agent, ip_address, reason, fe_group, hidden, editlock'
 	),
 	'feInterface' => $TCA['tx_hypeerror_errorlog']['feInterface'],
 	'columns' => array(
@@ -53,6 +53,13 @@ $TCA['tx_hypeerror_errorlog'] = array(
 		'url' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:hype_error/Resources/Private/Language/locallang_db.xml:tx_hypeerror_errorlog.url',
+			'config' => array(
+				'type' => 'input',
+			),
+		),
+		'address' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:hype_error/Resources/Private/Language/locallang_db.xml:tx_hypeerror_errorlog.address',
 			'config' => array(
 				'type' => 'input',
 			),
@@ -123,6 +130,14 @@ $TCA['tx_hypeerror_errorlog'] = array(
 				'foreign_table' => 'fe_groups'
 			),
 		),
+		'hidden' => array(
+			'exclude' => 1,
+			'label'	=> 'LLL:EXT:lang/locallang_general.xml:LGL.hidden',
+			'config'	=> array(
+				'type'	=> 'check',
+				'default' => 0,
+			),
+		),
 		'editlock' => array(
 			'exclude' => 1,
 			'l10n_mode' => 'mergeIfNotBlank',
@@ -134,13 +149,17 @@ $TCA['tx_hypeerror_errorlog'] = array(
 	),
 	'types' => array(
 		'0' => array('showitem' => '
-			domain, path, host, url, referrer,
+			--palette--;LLL:EXT:hype_error/Resources/Private/Language/locallang_db.xml:tx_hypeerror.palette.address;address,
 			--palette--;LLL:EXT:hype_error/Resources/Private/Language/locallang_db.xml:tx_hypeerror.palette.client;client,
 			reason, count'),
 	),
 	'palettes' => array(
+		'address' => array(
+			'showitem' => 'domain, --linebreak--, host, --linebreak--, path, --linebreak--, address, --linebreak--, url',
+			'canNotCollapse' => TRUE,
+		),
 		'client' => array(
-			'showitem' => 'user_agent, --linebreak--, ip_address',
+			'showitem' => 'user_agent, --linebreak--, ip_address, --linebreak--, referrer',
 			'canNotCollapse' => TRUE,
 		),
 	),

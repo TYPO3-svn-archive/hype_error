@@ -36,6 +36,7 @@ $TCA['tx_hypeerror_errorlog'] = array(
 		'default_sortby' => 'crdate DESC',
 		'delete' => 'deleted',
 		'enablecolumns' => array(
+			'disabled' => 'hidden',
 			'fe_group' => 'fe_group',
 		),
 		'editlock' => 'editlock',
@@ -43,7 +44,6 @@ $TCA['tx_hypeerror_errorlog'] = array(
 		'iconfile'		=> t3lib_extMgm::extRelPath($_EXTKEY) . 'Configuration/TCA/Icons/error.png',
 		'dividers2tabs' => TRUE,
 		'adminOnly' => TRUE,
-		//'readOnly' => TRUE,
 	),
 );
 
