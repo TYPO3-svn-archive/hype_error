@@ -27,7 +27,7 @@ class ux_tx_realurl extends tx_realurl {
 	public function decodeSpURL_throw404($msg) {
 
 		# set language uid
-		$_GET['tx_hypeerror_language_uid'] = (int)$this->detectedLanguage;
+		t3lib_div::_GETset((int)$this->detectedLanguage, $key = 'tx_hypeerror_language_uid');
 
 		# call parent method
 		parent::decodeSpURL_throw404($msg);

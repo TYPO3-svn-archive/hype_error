@@ -46,6 +46,14 @@ class Tx_HypeError_Hook_ErrorHook {
 	protected $request;
 
 	/**
+	 * @var array
+	 */
+	protected $ignoredResources = array(
+		'files' => array(),
+		'pattern' => NULL
+	);
+
+	/**
 	 * Constructor
 	 */
 	public function __construct() {
@@ -81,6 +89,13 @@ class Tx_HypeError_Hook_ErrorHook {
 			'tstamp' => time(),
 			'cruser_id' => 0,
 		);
+
+		# set ignored resources
+		$this->ignoredResources['files'] = array_filter(array_map('trim', explode(',', $this->settings['ignoredResources'])));
+
+		if(count($this->ignoredResources['files']) > 0) {
+			$this->ignoredResources['pattern'] = '~' . implode('|', array_map('preg_quote', $this->ignoredResources['files'])) . '~U';
+		}
 	}
 
 	/**
@@ -138,13 +153,21 @@ class Tx_HypeError_Hook_ErrorHook {
 
 			# send notification
 			if($this->settings['sendNotification'] && $record) {
-				if(
-					# send on threshold
-					($record['count'] == $this->settings['notificationThreshold']) ||
 
-					# send on every interval
-					($record['count'] >= $this->settings['notificationThreshold'] &&
-					($record['count'] + $this->settings['notificationThreshold']) % $this->settings['notificationInterval'] == 0)
+				# skip notification if configured
+				if(
+					# ignore pattern
+					!(count($this->ignoredResources['files']) > 0 &&
+					  preg_match($this->ignoredResources['pattern'], $this->request['address']))
+					&&
+					(
+						# send on threshold
+						($record['count'] == $this->settings['notificationThreshold']) ||
+
+						# send on every interval
+						($record['count'] >= $this->settings['notificationThreshold'] &&
+						($record['count'] + $this->settings['notificationThreshold']) % $this->settings['notificationInterval'] == 0)
+					)
 				) {
 					$this->sendNotification();
 				}
@@ -166,10 +189,10 @@ class Tx_HypeError_Hook_ErrorHook {
 
 		# get language uid
 		$addressLanguageUid = 0;
-		if($_GET['tx_hypeerror_language_uid']) {
-			$addressLanguageUid = urlencode((int)$_GET['tx_hypeerror_language_uid']);
-		} else if($_GET['L']) {
-			$addressLanguageUid = urlencode((int)$_GET['L']);
+		if(t3lib_div::_GET('tx_hypeerror_language_uid')) {
+			$addressLanguageUid = urlencode((int)t3lib_div::_GET('tx_hypeerror_language_uid'));
+		} else if(t3lib_div::_GET('L')) {
+			$addressLanguageUid = urlencode((int)t3lib_div::_GET('L'));
 		}
 
 		# build error page url

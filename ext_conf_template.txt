@@ -1,9 +1,6 @@
 # cat=basic/links/001; type=boolean; label = Log errors: Enable logging of 404 errors.
 logErrors = 1
 
-# cat=basic/links/002; type=options[INFO=0,NOTICE=1,WARNING=2,ERROR=3,FATAL=4]; label = Severity level: The level for which 404 errors are being logged.
-severityLevel = 3
-
 # cat=basic/links/003; type=boolean; label = Log with referrer only: Only log 404 errors for requests containing a referrer.
 logWithReferrerOnly = 0
 
@@ -27,3 +24,6 @@ notificationInterval = 25
 
 # cat=basic/links/008; type=string; label = Notification email address: Recipient of notification emails for 404 errors.
 notificationEmailAddress =
+
+# cat=basic/links/009; type=string; label = Ignored resources: CSV list of resources not triggering notifications.
+ignoredResources =
