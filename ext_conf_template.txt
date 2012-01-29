@@ -2,7 +2,7 @@
 logErrors = 1
 
 # cat=basic/links/003; type=boolean; label = Log with referrer only: Only log 404 errors for requests containing a referrer.
-logWithReferrerOnly = 0
+logWithReferrerOnly = 1
 
 # cat=basic/links/003; type=boolean; label = Group by path only: Group errors only by their path, skip query string.
 groupByPathOnly = 1
@@ -17,10 +17,10 @@ overrideHeader = 0
 sendNotification = 0
 
 # cat=basic/links/007; type=int+; label = Notification threshold: After this amount of 404 errors on the same URL, notifications will be sent.
-notificationThreshold = 10
+notificationThreshold = 25
 
 # cat=basic/links/008; type=int+; label = Notification interval: Interval after a new notification for 404 errors on the same URL will be sent.
-notificationInterval = 25
+notificationInterval = 100
 
 # cat=basic/links/008; type=string; label = Notification email address: Recipient of notification emails for 404 errors.
 notificationEmailAddress =
