@@ -12,7 +12,7 @@
 
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'Hype Error',
-	'description' => 'Provides the functionality to define a 404 error page per domain with error logging and customizable e-mail notification.',
+	'description' => 'Provides the functionality to define a 404 error page per domain with error logging and customizable e-mail notifications.',
 	'category' => 'fe',
 	'shy' => 0,
 	'version' => '0.0.0',
@@ -21,7 +21,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'priority' => '',
 	'loadOrder' => '',
 	'module' => '',
-	'state' => 'alpha',
+	'state' => 'beta',
 	'uploadfolder' => 0,
 	'createDirs' => '',
 	'modify_tables' => '',
@@ -35,9 +35,9 @@ $EM_CONF[$_EXTKEY] = array(
 	'constraints' => array(
 		'depends' => array(
 			'php' => '5.2.0-0.0.0',
-			'typo3' => '4.5.0-4.5.99',
-			'extbase' => '1.3.0-1.3.99',
-			'fluid' => '1.3.0-1.3.99',
+			'typo3' => '4.5.0-4.6.99',
+			'extbase' => '1.3.0-1.4.99',
+			'fluid' => '1.3.0-1.4.99',
 		),
 		'conflicts' => array(
 		),
