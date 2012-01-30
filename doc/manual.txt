@@ -1,0 +1,88 @@
+﻿EXT: Hype Error
+Extension Key: hype_error
+Language: en
+Version: 1.0.0
+Keywords: error, 404, http header, page not found
+Copyright 2012, Thomas “Thasmo” Deinhamer, <thasmo@gmail.com>
+
+This document is published under the Open Content License
+available from http://www.opencontent.org/opl.shtml
+
+The content of this document is related to TYPO3 
+- a GNU/GPL CMS/Framework available from www.typo3.org
+
+Table of Contents
+EXT: Hype Error	 1
+Introduction	 3
+What does it do? 3
+Screenshots      3
+Users manual     4
+Administration   5
+Installation     5
+Configuration    6
+Extension configuration 6
+Known problems   7
+
+Introduction
+What does it do?
+Hype Error extends the domain record to define an error page for 404 errors. The page will be shown if a non-existing page is called. Additionally notifications can be configured to be sent, if the 404 error page is called. There’s also a simple frontend plugin which can be inserted in the 404 error page to display an appropriate message to the user.
+
+Screenshots
+
+Users manual
+Open a domain record, define an error page and save it. On the error page you can define custom content and/or add the frontend plugin which shows a simple error message to the user.
+Administration
+Installation
+1. Import and install the extension.
+2. Adapt the configuration to your needs.
+Configuration
+Configuration is done completely via the extension manager. TypoScript configuration is not yet available. All settings apply to all domains of the TYPO3 instance.
+
+Extension configuration
+Property:
+Data type:
+Description:
+Default:
+logErrors
+boolean
+Enable logging of 404 errors.
+1
+logWithReferrerOnly
+boolean
+Only log 404 errors for requests containing a referrer.
+1
+groupByPathOnly
+boolean
+Group errors only by their path, skip query string.
+1
+useDomainPid
+boolean
+Use the domain page to store 404 errors, if available.
+1
+overrideHeader
+boolean
+Override 50x system errors with a 404 status response header.
+0
+sendNotification
+boolean
+Send e-mail notifications on 404 errors.
+0
+notificationThreshold
+integer
+After this amount of 404 errors on the same URL, notifications will be sent.
+25
+notificationInterval
+integer
+Interval after a new notification for 404 errors on the same URL will be sent.
+100
+notificationEmailAddress
+string
+Recipient of notification emails for 404 errors.
+
+ignoredResources
+string
+CSV list of resources not triggering notifications.
+
+
+Known problems
+Please report any problems on the forge.
